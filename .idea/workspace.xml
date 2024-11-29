@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/school_tests_backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/main_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/class_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemes/class_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemes/task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemes/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/examples.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/init_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/user_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/base_class.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/class_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/class_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FastAPI main" />
+        <option value="FastAPI test_main" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lolovski&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lolovski/school_tests_backend&quot;,
+    &quot;accountId&quot;: &quot;9ca23bae-1c4a-4524-944c-bd6f66019658&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2pW1m0PW2HgTtBAezGBkZyitI4A" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FastAPI.Unnamed.executor": "Run",
+    "FastAPI.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/DevPyCharm/school_tests/school_tests_backend/app/api/routers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\requests" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Python.FastAPI">
+      <module name="school_tests_backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="Python.FastAPI">
+      <option name="appName" value="app" />
+      <option name="file" value="D:\DevPyCharm\school_tests\school_tests_backend\app\main.py" />
+      <module name="school_tests_backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/Scripts/python.exe" />
+      <option name="SDK_NAME" value="Python 3.12 (school_tests_backend)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="" />
+      <created>1732866923284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732866923284</updated>
+      <workItem from="1732866924691" duration="240000" />
+      <workItem from="1732867174689" duration="16359000" />
+    </task>
+    <task id="LOCAL-00001" summary="start">
+      <option name="closed" value="true" />
+      <created>1732866963705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732866963705</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start" />
+    <option name="LAST_COMMIT_MESSAGE" value="start" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/school_tests_backend$Unnamed.coverage" NAME="app Coverage Results" MODIFIED="1732884452234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
