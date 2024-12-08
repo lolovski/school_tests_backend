@@ -27,6 +27,12 @@ class Task(Base):
         'DifficultyLevel',
         back_populates='tasks',
     )
+    images: Mapped[Optional['TaskImage']] = relationship(
+        'TaskImage',
+        back_populates='task',
+        cascade='all',
+        lazy='selectin'
+    )
 
 
 

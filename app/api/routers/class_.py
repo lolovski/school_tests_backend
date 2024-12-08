@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -6,6 +8,17 @@ from requests.class_ import class_requests
 from app.schemes.class_ import ClassRead, ClassCreate, ClassUpdate
 
 router = APIRouter()
+
+
+@router.get(
+    '/',
+    response_model=List[ClassRead],
+)
+async def get_classes(
+    session: AsyncSession = Depends(get_async_session),
+):
+    classes = await class_requests.get_multi(session=session)
+    return classes
 
 
 @router.get(

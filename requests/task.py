@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.task import Task, TaskImage, TaskCategory, ImageCategory
+from models.task import Task, TaskImage, TaskCategory, ImageCategory, DifficultyLevel
 from requests.base import RequestsBase
 
 
@@ -31,3 +31,10 @@ class ImageCategoryRequests(RequestsBase):
 
 
 image_category_requests = ImageCategoryRequests(ImageCategory)
+
+
+class DifficultyLevelRequests(RequestsBase):
+    ...
+
+
+difficulty_level_requests = DifficultyLevelRequests(DifficultyLevel)
