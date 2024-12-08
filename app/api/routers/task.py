@@ -15,6 +15,7 @@ router = APIRouter()
 @router.get(
     "/task/",
     response_model=List[TaskRead],
+    tags=['task']
 )
 async def get_tasks(
         session: AsyncSession = Depends(get_async_session),
@@ -26,6 +27,7 @@ async def get_tasks(
 @router.get(
     '/task/{task_id}',
     response_model=TaskRead,
+    tags=['task']
 )
 async def get_task(
         task_id: int,
@@ -38,6 +40,7 @@ async def get_task(
 @router.post(
     '/task/',
     response_model=TaskRead,
+    tags=['task']
 )
 async def create_task(
         task: TaskCreate,
@@ -51,6 +54,7 @@ async def create_task(
 @router.patch(
     '/task/{task_id}',
     response_model=TaskRead,
+    tags=['task']
 )
 async def update_task(
         task_id: int,
@@ -69,6 +73,7 @@ async def update_task(
     '/task/{task_id}',
     response_model=TaskRead,
     response_model_exclude_none=True,
+    tags=['task']
 )
 async def delete_task(
         task_id: int,
@@ -82,6 +87,7 @@ async def delete_task(
 @router.get(
     "/task_category/",
     response_model=List[TaskCategoryRead],
+    tags=['task']
 )
 async def get_task_categories(
         session: AsyncSession = Depends(get_async_session),
@@ -93,6 +99,7 @@ async def get_task_categories(
 @router.get(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
+    tags=['task']
 )
 async def get_task_category(
         task_category_id: int,
@@ -105,6 +112,7 @@ async def get_task_category(
 @router.post(
     '/task_category/',
     response_model=TaskCategoryRead,
+    tags=['task']
 )
 async def create_task_category(
         task_category: TaskCategoryCreate,
@@ -118,6 +126,7 @@ async def create_task_category(
 @router.patch(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
+    tags=['task']
 )
 async def update_task_category(
         task_category_id: int,
@@ -136,6 +145,7 @@ async def update_task_category(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
     response_model_exclude_none=True,
+    tags=['task']
 )
 async def delete_task_category(
         task_category_id: int,

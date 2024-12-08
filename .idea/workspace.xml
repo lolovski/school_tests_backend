@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
+      <change afterPath="$PROJECT_DIR$/.idea/school_tests_backend_backup.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/main_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/main_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/class_.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/class_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,29 +47,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;FastAPI.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;FastAPI.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DevPyCharm/school_tests/school_tests_backend/app/api/routers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FastAPI.Unnamed.executor": "Run",
+    "FastAPI.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Ключевский/PycharmProjects/school_tests_backend/.venv/Lib/site-packages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\requests" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app" />
-      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
@@ -111,8 +111,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
-        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -127,6 +127,7 @@
       <workItem from="1732866924691" duration="240000" />
       <workItem from="1732867174689" duration="16359000" />
       <workItem from="1732990446079" duration="7043000" />
+      <workItem from="1733652396566" duration="925000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -141,6 +142,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
