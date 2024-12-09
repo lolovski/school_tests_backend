@@ -4,6 +4,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.api.routers.utils import check_object_exists, check_name_duplicate
 from db.session import get_async_session
 from requests.class_ import class_requests
 from app.schemes.task import *
@@ -34,6 +35,8 @@ async def get_task(
         session: AsyncSession = Depends(get_async_session),
 ):
     task = await task_requests.get(task_id, session=session)
+    if task is None:
+        raise HTTPException(404, detail="Task not found")
     return task
 
 
@@ -87,7 +90,7 @@ async def delete_task(
 @router.get(
     "/task_category/",
     response_model=List[TaskCategoryRead],
-    tags=['task']
+    tags=['task category']
 )
 async def get_task_categories(
         session: AsyncSession = Depends(get_async_session),
@@ -99,20 +102,22 @@ async def get_task_categories(
 @router.get(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
-    tags=['task']
+    tags=['task category']
 )
 async def get_task_category(
         task_category_id: int,
         session: AsyncSession = Depends(get_async_session),
 ):
     task_category = await task_category_requests.get(task_category_id, session=session)
+    if task_category is None:
+        raise HTTPException(404, detail="Task category not found")
     return task_category
 
 
 @router.post(
     '/task_category/',
     response_model=TaskCategoryRead,
-    tags=['task']
+    tags=['task category']
 )
 async def create_task_category(
         task_category: TaskCategoryCreate,
@@ -126,7 +131,7 @@ async def create_task_category(
 @router.patch(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
-    tags=['task']
+    tags=['task category']
 )
 async def update_task_category(
         task_category_id: int,
@@ -145,7 +150,7 @@ async def update_task_category(
     '/task_category/{task_category_id}',
     response_model=TaskCategoryRead,
     response_model_exclude_none=True,
-    tags=['task']
+    tags=['task category']
 )
 async def delete_task_category(
         task_category_id: int,
@@ -159,6 +164,8 @@ async def delete_task_category(
 @router.get(
     "/difficulty_level/",
     response_model=List[DifficultyLevelRead],
+    tags=['difficulty level']
+
 )
 async def get_difficulty_levels(
         session: AsyncSession = Depends(get_async_session),
@@ -170,35 +177,40 @@ async def get_difficulty_levels(
 @router.get(
     '/difficulty_level/{difficulty_level_id}',
     response_model=DifficultyLevelRead,
+    tags=['difficulty level']
 )
-async def get_task(
+async def get_difficulty_level(
         difficulty_level_id: int,
         session: AsyncSession = Depends(get_async_session),
 ):
-    task = await difficulty_level_requests.get(difficulty_level_id, session=session)
-    return task
+    difficulty_level = await difficulty_level_requests.get(difficulty_level_id, session=session)
+    if difficulty_level is None:
+        raise HTTPException(404, detail="Difficulty level not found")
+    return difficulty_level
 
 
 @router.post(
     '/difficulty_level/',
     response_model=DifficultyLevelRead,
+    tags=['difficulty level']
 )
-async def create_task(
-        task: TaskCreate,
+async def create_difficulty_level(
+        difficulty_level: DifficultyLevelCreate,
         session: AsyncSession = Depends(get_async_session),
 ):
-    await check_name_duplicate(name=task.name, requests=difficulty_level_requests, session=session)
-    db_task = await difficulty_level_requests.create(obj_in=task, session=session)
-    return db_task
+    await check_name_duplicate(name=difficulty_level.name, requests=difficulty_level_requests, session=session)
+    db_difficulty_level = await difficulty_level_requests.create(obj_in=difficulty_level, session=session)
+    return db_difficulty_level
 
 
 @router.patch(
     '/difficulty_level/{difficulty_level_id}',
     response_model=DifficultyLevelRead,
+    tags=['difficulty level']
 )
 async def update_difficulty_level(
         difficulty_level_id: int,
-        update_in: TaskUpdate,
+        update_in: DifficultyLevelUpdate,
         session: AsyncSession = Depends(get_async_session),
 ):
     difficulty_level = await check_object_exists(id=difficulty_level_id, requests=difficulty_level_requests, session=session)
@@ -213,6 +225,7 @@ async def update_difficulty_level(
     '/difficulty_level/{difficulty_level_id}',
     response_model=DifficultyLevelRead,
     response_model_exclude_none=True,
+    tags=['difficulty level']
 )
 async def delete_difficulty_level(
         difficulty_level_id: int,
@@ -223,23 +236,5 @@ async def delete_difficulty_level(
     return difficulty_level
 
 
-async def check_name_duplicate(
-        name: str,
-        requests,
-        session: AsyncSession = Depends(get_async_session),
-) -> None:
-    duplicate_obj = await requests.get_by_name(name=name, session=session)
-    if duplicate_obj is not None:
-        raise HTTPException(status_code=400, detail="Object already exists")
 
-
-async def check_object_exists(
-        id: int,
-        requests,
-        session: AsyncSession = Depends(get_async_session),
-):
-    obj = await requests.get(id, session=session)
-    if obj is None:
-        raise HTTPException(status_code=400, detail="Object not found")
-    return obj
 

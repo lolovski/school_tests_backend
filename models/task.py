@@ -33,6 +33,10 @@ class Task(Base):
         cascade='all',
         lazy='selectin'
     )
+    cards: Mapped[List['Card']] = relationship(
+        back_populates='tasks',
+        secondary='card_task'
+    )
 
 
 

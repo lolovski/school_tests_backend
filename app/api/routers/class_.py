@@ -30,6 +30,8 @@ async def get_class(
     session: AsyncSession = Depends(get_async_session),
 ):
     class_ = await class_requests.get(class_id, session=session)
+    if class_ is None:
+        raise HTTPException(404, detail="Class not found")
     return class_
 
 

@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/.idea/school_tests_backend_backup.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/card.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routers/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemes/card.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/card.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1349-9622f89d2236_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1508-038af30f39f0_task.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1520-82d0e46b4ceb_task2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/main_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/main_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routers/class_.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/class_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemes/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,32 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.Unnamed.executor": "Run",
-    "FastAPI.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Ключевский/PycharmProjects/school_tests_backend/.venv/Lib/site-packages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;FastAPI.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ключевский/PycharmProjects/school_tests_backend/requests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend\requests" />
+      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend\app\api\routers" />
       <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\requests" />
-      <recent name="D:\DevPyCharm\school_tests\school_tests_backend" />
-      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
@@ -127,7 +139,10 @@
       <workItem from="1732866924691" duration="240000" />
       <workItem from="1732867174689" duration="16359000" />
       <workItem from="1732990446079" duration="7043000" />
-      <workItem from="1733652396566" duration="925000" />
+      <workItem from="1733652396566" duration="971000" />
+      <workItem from="1733722462783" duration="4330000" />
+      <workItem from="1733727973594" duration="2022000" />
+      <workItem from="1733731370406" duration="3102000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -137,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732866963705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="start">
+      <option name="closed" value="true" />
+      <created>1733653355820</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733653355820</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

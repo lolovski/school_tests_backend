@@ -29,7 +29,7 @@ class TaskUpdate(TaskCreate):
 class TaskCategoryCreate(BaseModel):
     name: Optional[str] = Field(None)
     level: Optional[int] = Field(None)
-    parent_category_id: Optional[str] = Field(None)
+    parent_category_id: Optional[int] = Field(None)
 
 
 class TaskCategoryRead(TaskCategoryCreate):
