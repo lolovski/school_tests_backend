@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/app/api/routers/card.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/routers/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemes/card.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/card.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
+    <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="card">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1349-9622f89d2236_main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1508-038af30f39f0_task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_11_29_1520-82d0e46b4ceb_task2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/main_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/main_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/class_.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/class_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemes/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routers/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +34,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lolovski/school_tests_backend&quot;,
-    &quot;accountId&quot;: &quot;9ca23bae-1c4a-4524-944c-bd6f66019658&quot;
+    &quot;url&quot;: &quot;https://github.com/lolovski/school_tests_backend.git&quot;,
+    &quot;accountId&quot;: &quot;0669a32d-079d-45ef-b942-a24aaad2569a&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -74,7 +62,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -142,7 +130,9 @@
       <workItem from="1733652396566" duration="971000" />
       <workItem from="1733722462783" duration="4330000" />
       <workItem from="1733727973594" duration="2022000" />
-      <workItem from="1733731370406" duration="3102000" />
+      <workItem from="1733731370406" duration="4044000" />
+      <workItem from="1733736568882" duration="2228000" />
+      <workItem from="1733738831506" duration="803000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -160,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733653355820</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="card">
+      <option name="closed" value="true" />
+      <created>1733734704977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733734704977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +169,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
+    <MESSAGE value="card" />
+    <option name="LAST_COMMIT_MESSAGE" value="card" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1732994805977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
