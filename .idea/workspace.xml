@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="card">
+    <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_12_09_1122-6f3496ee19ef_card_task.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/routers/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routers/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemes/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemes/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/user_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requests/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +43,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="D:\Git\bin\git.exe" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -34,8 +54,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lolovski/school_tests_backend.git&quot;,
-    &quot;accountId&quot;: &quot;0669a32d-079d-45ef-b942-a24aaad2569a&quot;
+    &quot;url&quot;: &quot;https://github.com/lolovski/school_tests_backend&quot;,
+    &quot;accountId&quot;: &quot;9ca23bae-1c4a-4524-944c-bd6f66019658&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -47,32 +67,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;FastAPI.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;FastAPI.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ключевский/PycharmProjects/school_tests_backend/requests&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FastAPI.Unnamed.executor": "Run",
+    "FastAPI.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/alexp/Downloads/continue-intellij-extension-0.0.83.zip",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend\requests" />
-      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend\app\api\routers" />
-      <recent name="C:\Users\Ключевский\PycharmProjects\school_tests_backend" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\requests" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app" />
+      <recent name="D:\DevPyCharm\school_tests\school_tests_backend\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
@@ -111,8 +130,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
-        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -127,12 +146,37 @@
       <workItem from="1732866924691" duration="240000" />
       <workItem from="1732867174689" duration="16359000" />
       <workItem from="1732990446079" duration="7043000" />
-      <workItem from="1733652396566" duration="971000" />
-      <workItem from="1733722462783" duration="4330000" />
-      <workItem from="1733727973594" duration="2022000" />
-      <workItem from="1733731370406" duration="4044000" />
-      <workItem from="1733736568882" duration="2228000" />
-      <workItem from="1733738831506" duration="803000" />
+      <workItem from="1734280385829" duration="1810000" />
+      <workItem from="1734364036731" duration="1807000" />
+      <workItem from="1734453858023" duration="2872000" />
+      <workItem from="1734541049807" duration="1245000" />
+      <workItem from="1734707678620" duration="2139000" />
+      <workItem from="1734804087786" duration="1901000" />
+      <workItem from="1734863301820" duration="1760000" />
+      <workItem from="1734884076886" duration="1087000" />
+      <workItem from="1734964090642" duration="599000" />
+      <workItem from="1735481528264" duration="7296000" />
+      <workItem from="1735551257798" duration="1595000" />
+      <workItem from="1735566118367" duration="1510000" />
+      <workItem from="1735742725366" duration="8835000" />
+      <workItem from="1735809144275" duration="2690000" />
+      <workItem from="1735828436446" duration="757000" />
+      <workItem from="1735839705079" duration="348000" />
+      <workItem from="1735840155693" duration="940000" />
+      <workItem from="1735891424905" duration="45000" />
+      <workItem from="1735913152300" duration="848000" />
+      <workItem from="1736324184640" duration="3274000" />
+      <workItem from="1736332467975" duration="3858000" />
+      <workItem from="1736351610651" duration="3022000" />
+      <workItem from="1736446759770" duration="2253000" />
+      <workItem from="1736498751445" duration="3497000" />
+      <workItem from="1736521098353" duration="1845000" />
+      <workItem from="1736767244427" duration="1334000" />
+      <workItem from="1737311382012" duration="9000" />
+      <workItem from="1737373110238" duration="32000" />
+      <workItem from="1737373161555" duration="2462000" />
+      <workItem from="1737376277520" duration="4811000" />
+      <workItem from="1737470167709" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -142,38 +186,29 @@
       <option name="project" value="LOCAL" />
       <updated>1732866963705</updated>
     </task>
-    <task id="LOCAL-00002" summary="start">
-      <option name="closed" value="true" />
-      <created>1733653355820</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1733653355820</updated>
-    </task>
-    <task id="LOCAL-00003" summary="card">
-      <option name="closed" value="true" />
-      <created>1733734704977</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1733734704977</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <MESSAGE value="card" />
-    <option name="LAST_COMMIT_MESSAGE" value="card" />
+    <option name="LAST_COMMIT_MESSAGE" value="start" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1732994805977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/school_tests_backend$Unnamed.coverage" NAME="app Coverage Results" MODIFIED="1732884452234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1737470791684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -38,3 +38,19 @@ class CardTaskRead(CardTaskCreate):
 class CardTaskUpdate(BaseModel):
     card_id: Optional[int] = Body(None)
     tasK_id: Optional[int] = Body(None)
+
+
+class CardUserCreate(BaseModel):
+    user_id: int
+    card_id: int
+
+
+class CardUserRead(CardUserCreate):
+
+    class Config:
+        orm_mode = True
+
+
+class CardUserUpdate(BaseModel):
+    user_id: Optional[int] = Body(None)
+    card_id: Optional[int] = Body(None)

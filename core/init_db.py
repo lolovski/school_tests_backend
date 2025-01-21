@@ -121,6 +121,7 @@ async def create_first_teacher():
             first_name=settings.first_superadmin_first_name,
             middle_name=settings.first_superadmin_middle_name,
             status_id=2,
+            is_superuser=True,  
         )
 
 

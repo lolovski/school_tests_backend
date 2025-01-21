@@ -3,6 +3,8 @@ from typing import Optional
 from fastapi import Body
 from pydantic import BaseModel, Field
 
+from app.schemes.card import CardRead
+
 
 class TaskCreate(BaseModel):
     name: Optional[str] = Field(None)
@@ -28,12 +30,12 @@ class TaskUpdate(TaskCreate):
 
 class TaskCategoryCreate(BaseModel):
     name: Optional[str] = Field(None)
-    level: Optional[int] = Field(None)
     parent_category_id: Optional[int] = Field(None)
 
 
 class TaskCategoryRead(TaskCategoryCreate):
     id: int = Field(...)
+    level: int = Field(...)
 
     class Config:
         orm_mode = True
@@ -56,6 +58,24 @@ class DifficultyLevelRead(DifficultyLevelCreate):
 
 class DifficultyLevelUpdate(DifficultyLevelCreate):
     ...
+
+
+class TaskUserCreate(BaseModel):
+    task_id: int = Field(...)
+    user_id: int = Field(...)
+    user_answer: str = Field(...)
+    card_id: Optional[int] = Field(None)
+
+
+class TaskUserRead(TaskUserCreate):
+    card: Optional[CardRead] = Field(None)
+
+    class Config:
+        orm_mode = True
+
+
+class TaskUserUpdate(BaseModel):
+    user_answer: str = Field(...)
 
 
 class ImageCategoryCreate(BaseModel):

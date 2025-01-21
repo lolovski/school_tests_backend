@@ -1,9 +1,14 @@
+from typing import List
+
 from fastapi import APIRouter, Depends
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.auth import auth_backend
 from core.user_manager import fastapi_users, current_user
+from db.session import get_async_session
 from models.user import User
-from app.schemes.user import UserRead, UserCreate, UserUpdate
+from app.schemes.user import UserRead, UserCreate, UserUpdate, StudentRead
+from requests.user import user_requests
 
 router = APIRouter()
 
@@ -75,3 +80,26 @@ async def create_user_api(
     db_user = await create_user(user, session=session)
     return db_user"""
 
+@router.get(
+    '/users/',
+    tags=['users'],
+    response_model=List[UserRead],
+)
+async def get_users(
+        session: AsyncSession = Depends(get_async_session),
+):
+    users = await user_requests.get_multi(session=session)
+    return users
+
+
+@router.get(
+    '/users/students/',
+    response_model=List[StudentRead],
+    tags=['users']
+)
+async def get_students(
+        session: AsyncSession = Depends(get_async_session),
+):
+    students = await user_requests.get_students(session=session)
+
+    return students

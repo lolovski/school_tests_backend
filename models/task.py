@@ -37,7 +37,16 @@ class Task(Base):
         back_populates='tasks',
         secondary='card_task'
     )
-
+    users: Mapped[List['User']] = relationship(
+        back_populates='tasks',
+        secondary='user_task',
+    )
+    card_tasks: Mapped[List['CardTask']] = relationship(
+        back_populates='task',
+    )
+    user_tasks: Mapped[List['UserTask']] = relationship(
+        back_populates='task'
+    )
 
 
 class TaskCategory(Base):
@@ -103,4 +112,26 @@ class TaskImage(Base):
     category: Mapped['ImageCategory'] = relationship(
         'ImageCategory',
         back_populates='images'
+    )
+
+
+class UserTask(Base):
+    __tablename__ = "user_task"
+    id = None
+    user_id: Mapped[int] = mapped_column(ForeignKey(
+        'user.id',
+        ondelete='CASCADE'
+    ), primary_key=True)
+    task_id: Mapped[int] = mapped_column(ForeignKey(
+        'task.id',
+        ondelete='CASCADE'
+    ), primary_key=True)
+    user_answer: Mapped[str] = mapped_column(String(512))
+    card_id: Mapped[Optional[int]] = mapped_column(ForeignKey('card.id'), default=None, primary_key=True)
+
+    task: Mapped['Task'] = relationship(
+        back_populates='user_tasks'
+    )
+    user: Mapped['User'] = relationship(
+        back_populates='task_users'
     )

@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Path
 from fastapi.params import Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.api.routers.utils import check_object_exists, check_name_duplicate
+from app.api.routers.utils import check_object_exists, check_name_duplicate, check_duplicate
 from db.session import get_async_session
 from requests.card import card_requests, card_task_requests
 from app.schemes.card import *
@@ -51,7 +51,7 @@ async def create_card(
         card: CardCreate,
         session: AsyncSession = Depends(get_async_session),
 ):
-    await check_name_duplicate(name=card.name, requests=card_requests, session=session)
+    # await check_name_duplicate(name=card.name, requests=card_requests, session=session)
     db_card = await card_requests.create(obj_in=card, session=session)
     return db_card
 
@@ -121,7 +121,7 @@ async def create_card_task(
         card_task: CardTaskCreate,
         session: AsyncSession = Depends(get_async_session),
 ):
-    await check_card_task_duplicate(card_id=card_task.card_id,task_id=card_task.task_id, session=session)
+    await check_duplicate(card_id=card_task.card_id, task_id=card_task.task_id, session=session, requests=card_task_requests)
     db_card_task = await card_task_requests.create(obj_in=card_task, session=session)
     return db_card_task
 
@@ -137,8 +137,8 @@ async def update_card(
         card_id: int = Query(..., description="Card ID"),
         session: AsyncSession = Depends(get_async_session),
 ):
-    card_task = await check_card_task_exists(task_id=task_id, card_id=card_id, session=session)
-    await check_card_task_duplicate(card_id=card_task.card_id, task_id=card_task.task_id, session=session)
+    card_task = await check_object_exists(task_id=task_id, card_id=card_id, session=session, requests=card_task_requests)
+    await check_duplicate(card_id=card_task.card_id, task_id=card_task.task_id, session=session, requests=card_task_requests)
     card_task = await card_task_requests.update(card_task, update_in, session=session)
     return card_task
 
@@ -154,27 +154,94 @@ async def delete_card(
         card_id: int = Query(..., description="Card ID"),
         session: AsyncSession = Depends(get_async_session),
 ):
-    card_task = await check_card_task_exists(task_id=task_id, card_id=card_id, session=session)
+    card_task = await check_object_exists(task_id=task_id, card_id=card_id, session=session, requests=card_task_requests)
     card_task = await card_task_requests.remove(card_task, session=session)
     return card_task
 
 
-async def check_card_task_exists(
-        task_id: int,
-        card_id: int,
-        session: AsyncSession,
+@router.get(
+    '/card_user/user/{user_id}',
+    tags=['card user']
+)
+async def get_user_cards(
+        user_id: int = Path(...),
+        session: AsyncSession = Depends(get_async_session),
 ):
-    card_task = await card_task_requests.get(session=session, task_id=task_id, card_id=card_id)
-    if card_task is None:
-        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Card task not found")
-    return card_task
+    user_cards = await card_user_requests.get_multi_user(user_id=user_id, session=session)
+    return user_cards
 
 
-async def check_card_task_duplicate(
-        task_id: int,
-        card_id: int,
-        session: AsyncSession,
+@router.get(
+    '/card_user/card/{card_id}',
+    response_model=List[CardUserRead],
+    tags=['card user']
+)
+async def get_card_users(
+        card_id: int = Path(...),
+        session: AsyncSession = Depends(get_async_session),
 ):
-    card_task = await card_task_requests.get(session=session, task_id=task_id, card_id=card_id)
-    if card_task is not None:
-        raise HTTPException(status_code=HTTPStatus.CONFLICT, detail="Card task already exists")
+    card_users = await card_user_requests.get_multi_card(card_id=card_id, session=session)
+    return card_users
+
+
+@router.get(
+    '/card_user/',
+    #response_model=CardUserRead,
+    tags=['card user']
+)
+async def get_card_user(
+        card_id: int = Query(...),
+        user_id: int = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_user = await card_user_requests.get_for_card(card_id=card_id, user_id=user_id, session=session)
+    if card_user is None:
+        raise HTTPException(status_code=404, detail="Card user not found")
+    return card_user
+
+
+@router.post(
+    '/card_user/',
+    response_model=CardUserRead,
+    tags=['card user']
+)
+async def create_card_user(
+        card_user: CardUserCreate,
+        session: AsyncSession = Depends(get_async_session),
+):
+    await check_duplicate(card_id=card_user.card_id, user_id=card_user.user_id, session=session, requests=card_user_requests)
+    db_card_user = await card_user_requests.create(obj_in=card_user, session=session)
+    return db_card_user
+
+
+@router.patch(
+    '/card_user/',
+    response_model=CardUserRead,
+    tags=['card user']
+)
+async def update_card_user(
+        update_in: CardUserUpdate,
+        card_id: int = Query(None),
+        user_id: int = Query(None),
+        session: AsyncSession = Depends(get_async_session)
+):
+    card_user = await check_object_exists(user_id=user_id, card_id=card_id, session=session, requests=card_user_requests)
+    await check_duplicate(requests=card_user_requests, session=session, user_id=card_user.user_id, card_id=card_user.card_id)
+    card_user = await card_user_requests.create(obj_in=card_user, session=session)
+    return card_user
+
+
+@router.delete(
+    '/card_user/',
+    response_model=CardUserRead,
+    tags=['card user']
+)
+async def delete_card_user(
+        card_id: int = Query(),
+        user_id: int = Query(),
+        session: AsyncSession = Depends(get_async_session)
+):
+    card_user = await check_object_exists(user_id=user_id, card_id=card_id, session=session,
+                                          requests=card_user_requests)
+    card_user = await card_user_requests.remove(card_user, session=session)
+    return card_user

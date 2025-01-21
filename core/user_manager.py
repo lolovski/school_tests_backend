@@ -5,7 +5,7 @@ from fastapi_users import BaseUserManager, IntegerIDMixin, InvalidPasswordExcept
 from fastapi_users_db_sqlalchemy import SQLAlchemyUserDatabase
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from core.auth import auth_backend, auth_admin_backend
+from core.auth import auth_backend
 from core.config import settings
 from db.session import get_async_session
 from models.user import User

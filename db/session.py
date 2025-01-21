@@ -6,7 +6,7 @@ from core.config import settings
 DATABASE_URL = settings.database_url
 
 # Создание асинхронного движка базы данных
-engine = create_async_engine(DATABASE_URL, echo=True, future=True)
+engine = create_async_engine(DATABASE_URL, future=True) #echo=True
 
 # Асинхронная сессия
 async_session = sessionmaker(

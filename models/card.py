@@ -16,6 +16,17 @@ class Card(Base):
         back_populates='cards',
         secondary='card_task'
     )
+    users: Mapped[List['User']] = relationship(
+        back_populates='cards',
+        secondary='card_user'
+    )
+    user_cards: Mapped[List['CardUser']] = relationship(
+        back_populates='card',
+    )
+    task_cards: Mapped[List['CardTask']] = relationship(
+        back_populates='card'
+    )
+
 
 
 class CardTask(Base):
@@ -29,3 +40,31 @@ class CardTask(Base):
         'task.id',
         ondelete='CASCADE'
     ), primary_key=True)
+    card: Mapped['Card'] = relationship(
+        back_populates='task_cards'
+    )
+    task: Mapped['Task'] = relationship(
+        back_populates='card_tasks'
+    )
+
+
+
+
+
+class CardUser(Base):
+    __tablename__ = 'card_user'
+    id = None
+    card_id: Mapped[int] = mapped_column(ForeignKey(
+        'card.id',
+        ondelete='CASCADE'
+    ), primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey(
+        'user.id',
+        ondelete='CASCADE'
+    ), primary_key=True)
+    card: Mapped['Card'] = relationship(
+        back_populates='user_cards'
+    )
+    user: Mapped['User'] = relationship(
+        back_populates='card_users'
+    )

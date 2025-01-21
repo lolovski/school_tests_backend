@@ -1,6 +1,7 @@
 from http import HTTPStatus
-from typing import List
 
+from typing import List
+from fastapi.params import Query
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -19,9 +20,10 @@ router = APIRouter()
     tags=['task']
 )
 async def get_tasks(
+        category_id: Optional[int] = Query(None),
         session: AsyncSession = Depends(get_async_session),
 ):
-    tasks = await task_requests.get_multi(session=session)
+    tasks = await task_requests.get_multi(session=session, category_id=category_id)
     return tasks
 
 
@@ -88,14 +90,29 @@ async def delete_task(
 
 
 @router.get(
+    '/task/card/',
+    tags=['task']
+)
+async def get_card_tasks(
+        card_id: str = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+
+    tasks = await task_requests.get_card_tasks(int(card_id), session=session)
+
+    return tasks
+
+
+@router.get(
     "/task_category/",
     response_model=List[TaskCategoryRead],
     tags=['task category']
 )
 async def get_task_categories(
+        parent_category_id: Optional[int] = Query(None),
         session: AsyncSession = Depends(get_async_session),
 ):
-    task_categories = await task_category_requests.get_multi(session=session)
+    task_categories = await task_category_requests.get_multi(session=session, parent_category_id=parent_category_id)
     return task_categories
 
 
@@ -236,5 +253,96 @@ async def delete_difficulty_level(
     return difficulty_level
 
 
+@router.get(
+    '/user_task/user',
+    response_model=List[TaskUserRead],
+    tags=['user_task']
+)
+async def get_user_tasks(
+        user_id: int,
+        session: AsyncSession = Depends(get_async_session),
+):
+    user_tasks = await user_task_requests.get_multi_user(user_id=user_id, session=session)
+
+    return user_tasks
 
 
+@router.get(
+    '/user_task/task',
+    response_model=List[TaskUserRead],
+    tags=['user_task']
+)
+async def get_task_users(
+        task_id: int,
+        session: AsyncSession = Depends(get_async_session),
+):
+    task_users = await user_task_requests.get_multi_task(task_id=task_id, session=session)
+    return task_users
+
+
+@router.get(
+    '/user_task/',
+    response_model=TaskUserRead,
+    tags=['user_task']
+)
+async def get_user_task(
+        user_id: int = Query(...),
+        task_id: int = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+    user_task = await user_task_requests.get(user_id=user_id, task_id=task_id, session=session)
+    if user_task is None:
+        raise HTTPException(404, detail="User task not found")
+    return user_task
+
+@router.post(
+    '/user_task/',
+    response_model=TaskUserRead,
+    tags=['user_task']
+)
+async def create_user_task(
+        user_task: TaskUserCreate,
+        session: AsyncSession = Depends(get_async_session),
+):
+    await check_user_task_duplicate(user_id=user_task.user_id, task_id=user_task.task_id, card_id=user_task.card_id, session=session)
+    db_user_task = await user_task_requests.create(obj_in=user_task, session=session)
+    return db_user_task
+
+
+@router.patch(
+    '/user_task/',
+    response_model=TaskUserRead,
+    tags=['user_task']
+)
+async def path_user_task(
+    update_in: TaskUserUpdate,
+    user_id: int = Query(...),
+    task_id: int = Query(...),
+    session: AsyncSession = Depends(get_async_session),
+):
+    user_task = await user_task_requests.get(user_id=user_id, task_id=task_id, session=session)
+    user_task = await user_task_requests.update(user_task, update_in, session=session)
+    return user_task
+
+
+
+@router.delete(
+    '/user_task/',
+    response_model=TaskUserRead,
+    response_model_exclude_none=True,
+    tags=['user_task']
+)
+async def delete_user_task(
+    user_id: int = Query(...),
+    task_id: int = Query(...),
+    session: AsyncSession = Depends(get_async_session),
+):
+    user_task = await user_task_requests.get(user_id=user_id, task_id=task_id, session=session)
+    user_task = await user_task_requests.remove(user_task, session=session)
+    return user_task
+
+
+async def check_user_task_duplicate(user_id, task_id, session, card_id=None):
+    user_task = await user_task_requests.get(user_id=user_id, task_id=task_id, session=session, card_id=card_id)
+    if user_task is not None:
+        raise HTTPException(400, detail="User task already exists")

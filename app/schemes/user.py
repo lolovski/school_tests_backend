@@ -4,6 +4,8 @@ from typing import Optional
 from fastapi_users import schemas
 from pydantic import Field, root_validator, ConfigDict
 
+from app.schemes.class_ import ClassRead
+
 
 class UserCreate(schemas.BaseUserCreate):
     email: str = Field()
@@ -48,3 +50,8 @@ class UserRead(schemas.BaseUser):
 
 class UserUpdate(schemas.BaseUser):
     email: str
+
+
+class StudentRead(UserRead):
+
+    class_: ClassRead

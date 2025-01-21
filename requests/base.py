@@ -3,17 +3,17 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-class RequestsBase:
+class  RequestsBase:
 
     def __init__(self, model):
         self.model = model
 
     async def get(
             self,
-            obj_id: int,
+            id: int,
             session: AsyncSession,
     ):
-        db_obj = await session.scalar(select(self.model).where(self.model.id == obj_id))
+        db_obj = await session.scalar(select(self.model).where(self.model.id == id))
         return db_obj
 
     async def get_by_name(self, name: str, session: AsyncSession):
