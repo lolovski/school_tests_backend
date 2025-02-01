@@ -1,12 +1,13 @@
-from datetime import datetime
+import datetime
 from typing import List, Optional
 
 from fastapi_users.db import SQLAlchemyBaseUserTable
 from sqlalchemy import String, Integer, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-
+from pytz import timezone
 from db.base_class import Base
-
+from sqlalchemy.sql import func
+moscow_tz = timezone('Europe/Moscow')
 
 class Task(Base):
     __tablename__ = "task"
@@ -18,6 +19,10 @@ class Task(Base):
 
     difficulty_level_id: Mapped[Optional[int]] = mapped_column(ForeignKey("difficulty_level.id"))
     category_id: Mapped[Optional[int]] = mapped_column(ForeignKey('task_category.id'))
+    created_at: Mapped[Optional[datetime]] = mapped_column(DateTime, default=func.now())
+
+    is_active: Mapped[Optional[bool]] = mapped_column(Boolean, default=True)
+
 
     category: Mapped[Optional['TaskCategory']] = relationship(
         'TaskCategory',
@@ -134,4 +139,7 @@ class UserTask(Base):
     )
     user: Mapped['User'] = relationship(
         back_populates='task_users'
+    )
+    card: Mapped['Card'] = relationship(
+        back_populates='user_task_card'
     )

@@ -10,7 +10,9 @@ from core.user_manager import get_user_db, get_user_manager
 from db.session import get_async_session
 
 from app.schemes.user import UserCreate
+from models.card import CardCategory
 from models.class_ import Class
+from models.task import TaskCategory
 from models.user import Status
 
 get_async_session_context = contextlib.asynccontextmanager(get_async_session)
@@ -27,6 +29,10 @@ async def create_base_db(
             classes = await session.scalars(select(Class))
             if len(classes.all()) == 0:
                 first_class = Class(name=settings.first_class_name)
+                parent_task_category = TaskCategory(name="Главная категория", id=0)
+                parent_card_category = CardCategory(name="Главная категория", id=0)
+                session.add(parent_task_category)
+                session.add(parent_card_category)
                 session.add(first_class)
                 student = Status(name='student', level=1)
                 teacher = Status(name='teacher', level=2)

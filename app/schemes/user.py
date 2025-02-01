@@ -14,6 +14,7 @@ class UserCreate(schemas.BaseUserCreate):
     first_name: str = Field()
     middle_name: Optional[str] = Field(None)
     class_id: Optional[int] = Field(None)
+    status_id: Optional[int] = Field(None)
 
     class Config:
         title = 'Создание пользователя'

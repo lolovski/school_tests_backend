@@ -7,22 +7,22 @@ from sqlalchemy.sql import and_
 from models.card import Card
 from models.task import Task, TaskImage, TaskCategory, ImageCategory, DifficultyLevel, UserTask
 from requests.base import RequestsBase
-
+from sqlalchemy import desc
 
 class TaskRequests(RequestsBase):
+    
     async def get_multi(
             self,
             category_id: int,
             session: AsyncSession,
     ):
         if category_id is None:
-            # Если category_id не задан, возвращаем все задания
-            query = select(Task)
+            # Если category_id не задан, возвращаем все задания, отсортированные от новых к старым
+            query = select(Task).order_by(Task.created_at.desc())
             result = await session.execute(query)
             return result.scalars().unique().all()
-
-            # Получаем все дочерние категории рекурсивно
-
+    
+        # Получаем все дочерние категории рекурсивно
         async def get_all_child_categories(category_id: int) -> List[int]:
             query = select(TaskCategory).where(TaskCategory.parent_category_id == category_id)
             result = await session.execute(query)
@@ -31,13 +31,16 @@ class TaskRequests(RequestsBase):
             for child in child_categories:
                 all_categories.extend(await get_all_child_categories(child.id))
             return all_categories
-
-            # Получаем все категории, включая дочерние
-
+    
+        # Получаем все категории, включая дочерние
         all_categories = await get_all_child_categories(category_id)
-
-        # Получаем все задания из этих категорий
-        query = select(Task).where(Task.category_id.in_(all_categories))
+    
+        # Получаем все задания из этих категорий, отсортированные от новых к старым
+        query = (
+            select(Task)
+            .where(Task.category_id.in_(all_categories))
+            .order_by(Task.created_at.desc())
+        )
         result = await session.execute(query)
         return result.scalars().unique().all()
 

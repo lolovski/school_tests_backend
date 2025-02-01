@@ -46,9 +46,7 @@ class  RequestsBase:
             session: AsyncSession,
     ):
         obj_data = jsonable_encoder(db_obj)
-        print(obj_in)
         update_data = obj_in.dict(exclude_unset=True)
-        print(update_data)
         for field in obj_data:
             if field in update_data:
                 setattr(db_obj, field, update_data[field])
@@ -65,3 +63,15 @@ class  RequestsBase:
         await session.delete(db_obj)
         await session.commit()
         return db_obj
+
+
+    async def get_multi_by_name(
+            self,
+            name: str,
+            session: AsyncSession,
+    ):
+        objs_db = await session.scalars(
+            select(self.model)
+            .where(self.model.name == name)
+        )
+        return objs_db.all()

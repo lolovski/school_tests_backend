@@ -12,6 +12,7 @@ class TaskCreate(BaseModel):
     answer: Optional[str] = Field(None)
     text: Optional[str] = Field(None)
     solution_url: Optional[str] = Field(None)
+    is_active: Optional[bool] = Field(default=True)
 
     difficulty_level_id: Optional[int] = Field(None)
     category_id: Optional[int] = Field(None)
@@ -68,7 +69,7 @@ class TaskUserCreate(BaseModel):
 
 
 class TaskUserRead(TaskUserCreate):
-    card: Optional[CardRead] = Field(None)
+    #card: Optional[CardRead] = Field(None)
 
     class Config:
         orm_mode = True

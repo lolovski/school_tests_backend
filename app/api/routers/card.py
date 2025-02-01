@@ -6,6 +6,7 @@ from fastapi.params import Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.routers.utils import check_object_exists, check_name_duplicate, check_duplicate
+from core.user_manager import current_user
 from db.session import get_async_session
 from requests.card import card_requests, card_task_requests
 from app.schemes.card import *
@@ -22,8 +23,10 @@ router = APIRouter()
 )
 async def get_cards(
         session: AsyncSession = Depends(get_async_session),
+        category_id: Optional[int] = Query(None),
+        user: User = Depends(current_user)
 ):
-    cards = await card_requests.get_multi(session=session)
+    cards = await card_requests.get_multi(session=session, category_id=category_id, user_id=user.id)
     return cards
 
 
@@ -67,9 +70,10 @@ async def update_card(
         session: AsyncSession = Depends(get_async_session),
 ):
     card = await check_object_exists(id=card_id, requests=card_requests, session=session)
+    duplicate_objs = await card_requests.get_multi_by_name(name=update_in.name, session=session)
+    if update_in.variant in [x.variant for x in duplicate_objs]:
+        raise HTTPException(status_code=409, detail="Duplicate variant or name")
 
-    if update_in.name is not None:
-        await check_name_duplicate(name=update_in.name, requests=card_requests, session=session)
     card = await card_requests.update(card, update_in, session=session)
     return card
 
@@ -245,3 +249,115 @@ async def delete_card_user(
                                           requests=card_user_requests)
     card_user = await card_user_requests.remove(card_user, session=session)
     return card_user
+
+
+@router.get(
+    "/card_category/",
+    response_model=List[CardCategoryRead],
+    tags=['card category']
+)
+async def get_card_categories(
+        parent_category_id: Optional[int] = Query(None),
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_categories = await card_category_requests.get_multi(session=session, parent_category_id=parent_category_id)
+    return card_categories
+
+
+@router.get(
+    '/card_category/{card_category_id}',
+    response_model=CardCategoryRead,
+    tags=['card category']
+)
+async def card_category_id(
+        card_category_id: int,
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_category = await card_category_requests.get(card_category_id, session=session)
+    if card_category is None:
+        raise HTTPException(404, detail="Card category not found")
+    return card_category
+
+
+@router.post(
+    '/card_category/',
+    response_model=CardCategoryRead,
+    tags=['card category']
+)
+async def create_card_category(
+        card_category: CardCategoryCreate,
+        session: AsyncSession = Depends(get_async_session),
+):
+    await check_name_duplicate(name=card_category.name, requests=card_category_requests, session=session)
+    db_card_category = await card_category_requests.create(obj_in=card_category, session=session)
+    return db_card_category
+
+
+@router.patch(
+    '/card_category/{card_category_id}',
+    response_model=CardCategoryRead,
+    tags=['card category']
+)
+async def update_card_category(
+        card_category_id: int,
+        update_in: CardCategoryUpdate,
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_category = await check_object_exists(id=card_category_id, requests=card_category_requests, session=session)
+    if update_in.name is not None:
+        await check_name_duplicate(name=update_in.name, requests=card_category_requests, session=session)
+    card_category = await card_category_requests.update(card_category, update_in, session=session)
+    return card_category
+
+
+@router.delete(
+    '/card_category/{card_category_id}',
+    response_model=CardCategoryRead,
+    response_model_exclude_none=True,
+    tags=['card category']
+)
+async def delete_card_category(
+        card_category_id: int,
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_category = await check_object_exists(id=card_category_id, requests=card_category_requests, session=session)
+    card_category = await card_category_requests.remove(card_category, session=session)
+    return card_category
+
+
+@router.get(
+    '/card_by_name/',
+    response_model=List[CardRead],
+    tags=['card']
+)
+async def get_cards_by_name(
+        name: str = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+    cards = await card_requests.get_multi_by_name(name=name, session=session)
+    return cards
+
+
+@router.get(
+    '/card_users/',
+    # response_model=List[UserRead],
+    tags=['card']
+)
+async def get_cards_users(
+        card_id: int = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+    card_users = await card_requests.get_card_users(card_id=card_id, session=session)
+    return card_users
+
+
+@router.get(
+    '/user_cards',
+    tags=['card']
+)
+async def get_user_cards(
+        user_id: int = Query(...),
+        session: AsyncSession = Depends(get_async_session),
+):
+    cards = await card_requests.get_user_cards(user_id=user_id, session=session)
+    return cards

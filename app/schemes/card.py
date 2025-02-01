@@ -4,12 +4,19 @@ from fastapi import Body
 from pydantic import BaseModel, Field
 
 
+
 class CardCreate(BaseModel):
     name: str = Field(
         ..., min_length=2, max_length=128,
     )
     variant: Optional[int] = Field(
         None,
+    )
+    category_id: Optional[int] = Field(
+        None,
+    )
+    is_active: Optional[bool] = Field(
+        True,
     )
 
 
@@ -23,7 +30,9 @@ class CardRead(CardCreate):
 class CardUpdate(BaseModel):
     name: Optional[str] = Body(None)
     variant: Optional[int] = Body(None)
-
+    category_id: Optional[int] = Field(
+        None,
+    )
 
 class CardTaskCreate(BaseModel):
     card_id: int
@@ -54,3 +63,23 @@ class CardUserRead(CardUserCreate):
 class CardUserUpdate(BaseModel):
     user_id: Optional[int] = Body(None)
     card_id: Optional[int] = Body(None)
+
+
+class CardCategoryCreate(BaseModel):
+    name: Optional[str] = Field(None)
+    parent_category_id: Optional[int] = Field(None)
+
+
+class CardCategoryRead(CardCategoryCreate):
+    id: int = Field(...)
+    level: int = Field(...)
+
+    class Config:
+        orm_mode = True
+
+
+class CardCategoryUpdate(CardCategoryCreate):
+    ...
+
+
+

@@ -6,27 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/2024_12_09_1122-6f3496ee19ef_card_task.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/routers/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemes/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemes/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/task.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemes/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/user_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/session.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requests/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requests/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requests/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,24 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.Unnamed.executor": "Run",
-    "FastAPI.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/alexp/Downloads/continue-intellij-extension-0.0.83.zip",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;FastAPI.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.card.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexp/Downloads/continue-intellij-extension-0.0.83.zip&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\DevPyCharm\school_tests\school_tests_backend\app\api\routers" />
@@ -176,7 +166,19 @@
       <workItem from="1737373110238" duration="32000" />
       <workItem from="1737373161555" duration="2462000" />
       <workItem from="1737376277520" duration="4811000" />
-      <workItem from="1737470167709" duration="1482000" />
+      <workItem from="1737470167709" duration="5353000" />
+      <workItem from="1737645299648" duration="21000" />
+      <workItem from="1737647286701" duration="7000" />
+      <workItem from="1737719366216" duration="13025000" />
+      <workItem from="1737799406845" duration="3049000" />
+      <workItem from="1737885414818" duration="2812000" />
+      <workItem from="1737905087299" duration="951000" />
+      <workItem from="1737987178075" duration="6924000" />
+      <workItem from="1738078433446" duration="36000" />
+      <workItem from="1738251833578" duration="4088000" />
+      <workItem from="1738326264545" duration="17847000" />
+      <workItem from="1738408801034" duration="804000" />
+      <workItem from="1738414845740" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -186,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732866963705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="start">
+      <option name="closed" value="true" />
+      <created>1737471658440</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737471658440</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +219,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/school_tests_backend$Unnamed.coverage" NAME="app Coverage Results" MODIFIED="1732884452234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1737470791684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/school_tests_backend$card.coverage" NAME="card Coverage Results" MODIFIED="1737993098022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/requests" />
+    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1738409233923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

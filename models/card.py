@@ -12,6 +12,17 @@ class Card(Base):
     __tablename__ = "card"
     name: Mapped[Optional[str]] = mapped_column(String(128), default=None)
     variant: Mapped[Optional[str]] = mapped_column(Integer, nullable=True)
+    created_at: Mapped[Optional[datetime]] = mapped_column(DateTime, default=datetime.now())
+    is_active: Mapped[Optional[bool]] = mapped_column(Boolean, default=True)
+    description: Mapped[Optional[str]] = mapped_column(String(256), default=None)
+    category_id: Mapped[Optional[int]] = mapped_column(ForeignKey('card_category.id'))
+
+    category: Mapped[Optional['CardCategory']] = relationship(
+        'CardCategory',
+        back_populates='cards'
+    )
+    #deadline: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
     tasks: Mapped[List['Task']] = relationship(
         back_populates='cards',
         secondary='card_task'
@@ -26,7 +37,9 @@ class Card(Base):
     task_cards: Mapped[List['CardTask']] = relationship(
         back_populates='card'
     )
-
+    user_task_card: Mapped[List['UserTask']] = relationship(
+        back_populates='card'
+    )
 
 
 class CardTask(Base):
@@ -48,12 +61,10 @@ class CardTask(Base):
     )
 
 
-
-
-
 class CardUser(Base):
     __tablename__ = 'card_user'
     id = None
+    completed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, default=datetime.now())
     card_id: Mapped[int] = mapped_column(ForeignKey(
         'card.id',
         ondelete='CASCADE'
@@ -67,4 +78,28 @@ class CardUser(Base):
     )
     user: Mapped['User'] = relationship(
         back_populates='card_users'
+    )
+
+
+class CardCategory(Base):
+    __tablename__ = 'card_category'
+    name: Mapped[str] = mapped_column(String(128))
+    level: Mapped[int] = mapped_column(Integer, default=0)
+    parent_category_id: Mapped[Optional[int]] = mapped_column(ForeignKey('card_category.id'), default=0)
+    cards: Mapped[List['Card']] = relationship(
+        'Card',
+        back_populates='category',
+        cascade='all',
+        lazy='selectin'
+    )
+
+    parent_category: Mapped['Optional[CardCategory]'] = relationship(
+        back_populates='children_categories',
+        remote_side='CardCategory.id'
+    )
+    children_categories: Mapped[List['CardCategory']] = relationship(
+        'CardCategory',
+        back_populates='parent_category',
+        cascade='all',
+        lazy='selectin'
     )
