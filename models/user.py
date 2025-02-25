@@ -6,7 +6,7 @@ from sqlalchemy import String, Integer, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from db.base_class import Base
-from models.card import CardUser
+from models.problem import UserProblem
 
 
 class User(SQLAlchemyBaseUserTable[int], Base):
@@ -48,6 +48,13 @@ class User(SQLAlchemyBaseUserTable[int], Base):
         back_populates='user'
     )
     task_users: Mapped[List['UserTask']] = relationship(
+        back_populates='user'
+    )
+    problems: Mapped[List['Problem']] = relationship(
+        back_populates='users',
+        secondary='user_problem'
+    )
+    problem_users: Mapped[List['UserProblem']] = relationship(
         back_populates='user'
     )
 

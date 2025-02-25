@@ -24,14 +24,16 @@ class TaskRequests(RequestsBase):
     
         # Получаем все дочерние категории рекурсивно
         async def get_all_child_categories(category_id: int) -> List[int]:
-            query = select(TaskCategory).where(TaskCategory.parent_category_id == category_id)
-            result = await session.execute(query)
-            child_categories = result.scalars().all()
-            all_categories = [category_id]
-            for child in child_categories:
-                all_categories.extend(await get_all_child_categories(child.id))
-            return all_categories
-    
+            if category_id != 0:
+                query = select(TaskCategory).where(TaskCategory.parent_category_id == category_id)
+                result = await session.execute(query)
+                child_categories = result.scalars().all()
+                all_categories = [category_id]
+                for child in child_categories:
+                    all_categories.extend(await get_all_child_categories(child.id))
+                return all_categories
+            else:
+                return []
         # Получаем все категории, включая дочерние
         all_categories = await get_all_child_categories(category_id)
     
@@ -76,7 +78,7 @@ class TaskCategoryRequests(RequestsBase):
             parent_category_id: int,
             session: AsyncSession,
     ):
-        query = select(self.model)
+        query = select(self.model).where(self.model.id != 0)
         if parent_category_id is not None:
             query = query.where(self.model.parent_category_id == parent_category_id)
         result = await session.execute(query)

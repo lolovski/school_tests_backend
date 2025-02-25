@@ -58,7 +58,7 @@ class TaskCategory(Base):
     __tablename__ = "task_category"
     name: Mapped[str] = mapped_column(String(128))
     level: Mapped[int] = mapped_column(Integer, default=1)
-    parent_category_id: Mapped[Optional[int]] = mapped_column(ForeignKey('task_category.id'), default=None)
+    parent_category_id: Mapped[Optional[int]] = mapped_column(ForeignKey('task_category.id'), default=0)
 
     tasks: Mapped[List['Task']] = relationship(
         'Task',

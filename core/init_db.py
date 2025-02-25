@@ -12,8 +12,10 @@ from db.session import get_async_session
 from app.schemes.user import UserCreate
 from models.card import CardCategory
 from models.class_ import Class
-from models.task import TaskCategory
+from models.problem import ProblemCategory
+from models.task import TaskCategory, DifficultyLevel
 from models.user import Status
+from requests.task import difficulty_level_requests
 
 get_async_session_context = contextlib.asynccontextmanager(get_async_session)
 
@@ -29,10 +31,14 @@ async def create_base_db(
             classes = await session.scalars(select(Class))
             if len(classes.all()) == 0:
                 first_class = Class(name=settings.first_class_name)
-                parent_task_category = TaskCategory(name="Главная категория", id=0)
-                parent_card_category = CardCategory(name="Главная категория", id=0)
+                parent_task_category = TaskCategory(name="Главная категория", id=0, parent_category_id=None)
+                parent_card_category = CardCategory(name="Главная категория", id=0, parent_category_id=None)
+                parent_problem_category = ProblemCategory(name="Главная категория", id=0, parent_category_id=None)
+                difficulty_level = DifficultyLevel(name="Сложный")
+                session.add(difficulty_level)
                 session.add(parent_task_category)
                 session.add(parent_card_category)
+                session.add(parent_problem_category)
                 session.add(first_class)
                 student = Status(name='student', level=1)
                 teacher = Status(name='teacher', level=2)
@@ -44,7 +50,6 @@ async def create_base_db(
                 await session.commit()
     except UserAlreadyExists:
         pass
-
 
 
 

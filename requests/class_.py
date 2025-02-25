@@ -10,4 +10,3 @@ class ClassRequests(RequestsBase):
 
 
 class_requests = ClassRequests(Class)
-
