@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     secret_jwt: str
     secret_admin_jwt: str
     secret_user: str
-
+    server_id: str
     first_class_name: Optional[str]
 
     first_superadmin_email: Optional[EmailStr]

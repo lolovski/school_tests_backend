@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from app.api.main_router import main_router
+from core.config import settings
 from core.init_db import start_db
 
 app = FastAPI()
@@ -22,12 +23,12 @@ origins = [
     'http://127.0.0.1:3000',
     'http://localhost',
     'http://127.0.0.1',
-    'http://172.25.41.200/',
-    '172.25.41.200'
+    'http://172.25.41.200',
+    settings.server_id
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
