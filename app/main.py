@@ -23,6 +23,7 @@ origins = [
     'http://localhost',
     'http://127.0.0.1',
     'http://172.25.41.200/',
+    '172.25.41.200'
 ]
 app.add_middleware(
     CORSMiddleware,
