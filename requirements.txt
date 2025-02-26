@@ -15,3 +15,4 @@ aiosqlite
 asyncpg
 pytz
 python-dotenv
+psutil

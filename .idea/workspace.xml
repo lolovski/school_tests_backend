@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43bd05f-e2e9-4230-af07-5f1a5cd437fa" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/app/api/routers/problem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemes/problem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/problem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requests/problem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/2025_02_01_1426-4d47e46dfa03_main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/main_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/main_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/class_.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/class_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/requests/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +190,8 @@
       <workItem from="1740320852506" duration="2388000" />
       <workItem from="1740471720776" duration="52000" />
       <workItem from="1740478460786" duration="7242000" />
+      <workItem from="1740503562018" duration="635000" />
+      <workItem from="1740563077899" duration="1239000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -235,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738493225098</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="start">
+      <option name="closed" value="true" />
+      <created>1740516713707</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740516713707</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +257,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/school_tests_backend$Unnamed.coverage" NAME="app Coverage Results" MODIFIED="1732884452234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/school_tests_backend$card.coverage" NAME="card Coverage Results" MODIFIED="1737993098022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/requests" />
-    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1740490648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/school_tests_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1740503576074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
