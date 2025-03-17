@@ -126,11 +126,11 @@ async def create_first_superadmin():
 
 async def create_first_teacher():
         await create_user(
-            email='teacher@gmail.com',
-            password=settings.first_superadmin_password,
-            last_name=settings.first_superadmin_last_name,
-            first_name=settings.first_superadmin_first_name,
-            middle_name=settings.first_superadmin_middle_name,
+            email=settings.first_teacher_email,
+            password=settings.first_teacher_password,
+            last_name=settings.first_teacher_last_name,
+            first_name=settings.first_teacher_first_name,
+            middle_name=settings.first_teacher_middle_name,
             status_id=2,
             is_superuser=True,  
         )

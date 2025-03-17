@@ -24,7 +24,8 @@ origins = [
     'http://localhost',
     'http://127.0.0.1',
     'http://172.25.41.200',
-    settings.server_id
+    settings.server_id,
+    settings.ip_address
 ]
 app.add_middleware(
     CORSMiddleware,
